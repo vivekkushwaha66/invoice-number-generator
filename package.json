@@ -32,6 +32,12 @@
     },
     "name": "@vivekkushwaha66/invoice-number-generator",
     "author": "Vivek Kushwaha",
+    "keywords": [
+        "invoice",
+        "invoice-number-generator",
+        "invoice number",
+        "generator"
+    ],
     "module": "dist/@vivekkushwaha66/invoice-number-generator.esm.js",
     "size-limit": [
         {

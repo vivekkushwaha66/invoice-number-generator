@@ -1,0 +1,3 @@
+export const DEFAULT_PREFIX = 'INV'
+export const DEFAULT_CENTURY = 2000
+export const DEFAULT_FINACIAL_YEAR_ENDING_MONTH = 3

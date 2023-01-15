@@ -1,5 +1,5 @@
 {
-    "version": "0.0.1",
+    "version": "0.0.3",
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -49,10 +49,8 @@
             "limit": "10 KB"
         }
     ],
-    "dependencies": {
-        "@types/node": "^18.11.18"
-    },
     "devDependencies": {
+        "@types/node": "^18.11.18",
         "@types/jest": "^29.2.5"
     }
 }

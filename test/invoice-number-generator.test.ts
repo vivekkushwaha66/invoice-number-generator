@@ -18,6 +18,7 @@ describe('invoice number generator test suite', () => {
 
   it('should generate invoice number with prefix VK', () => {
     const ing = new InvoiceNumberGenerator(invoiceNumberOptions).generate()
+    console.log(ing)
     expect(ing).toContain('VK')
   })
 

@@ -30,16 +30,16 @@
         "singleQuote": true,
         "trailingComma": "es5"
     },
-    "name": "invoice-number-generator",
+    "name": "@vivekkushwaha66/invoice-number-generator",
     "author": "Vivek Kushwaha",
-    "module": "dist/invoice-number-generator.esm.js",
+    "module": "dist/@vivekkushwaha66/invoice-number-generator.esm.js",
     "size-limit": [
         {
-            "path": "dist/invoice-number-generator.cjs.production.min.js",
+            "path": "dist/@vivekkushwaha66/invoice-number-generator.cjs.production.min.js",
             "limit": "10 KB"
         },
         {
-            "path": "dist/invoice-number-generator.esm.js",
+            "path": "dist/@vivekkushwaha66/invoice-number-generator.esm.js",
             "limit": "10 KB"
         }
     ],

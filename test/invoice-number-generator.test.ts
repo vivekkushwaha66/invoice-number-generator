@@ -13,7 +13,6 @@ describe('invoice number generator test suite', () => {
 
   it(`should generate invoice number without passing invoice number options`, () => {
     const ing = new InvoiceNumberGenerator().generate()
-    console.log(ing)
     expect(ing.length).toBeGreaterThanOrEqual(3)
   })
 
@@ -32,7 +31,6 @@ describe('invoice number generator test suite', () => {
   it('should generate invoice number containing 27', () => {
     invoiceNumberOptions.counter = 26
     const ing = new InvoiceNumberGenerator(invoiceNumberOptions).generate()
-    console.log(ing)
     expect(ing).toContain('27')
   })
 
@@ -48,6 +46,14 @@ describe('invoice number generator test suite', () => {
     const ingInstance = new InvoiceNumberGenerator(invoiceNumberOptions)
     ingInstance.generate()
     expect(ingInstance.warnings.length).toBeGreaterThan(0)
+  })
+
+
+  it(`should contain INV as prefix on passing prefix as empty spaces`, () => {
+    invoiceNumberOptions.prefix = '   '
+    const ing = new InvoiceNumberGenerator(invoiceNumberOptions).generate()
+    expect(ing).toContain('INV')
+
   })
 
 });

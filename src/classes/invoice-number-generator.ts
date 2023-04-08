@@ -22,7 +22,7 @@ export class InvoiceNumberGenerator {
             this._counter = option.counter ? option.counter : this._counter
             this._century = option.century ? option.century : this._century
             this._financialYearEndingMonth = option.financialYearEndingMonth ? option.financialYearEndingMonth : this._financialYearEndingMonth
-            this._financialYearEndingMonth >= 12 ? this._financialYearEndingMonth % 12 : this._financialYearEndingMonth
+            this._financialYearEndingMonth = this._financialYearEndingMonth >= 12 ? this._financialYearEndingMonth % 12 : this._financialYearEndingMonth
         }
         this.setCurrentFinancialYear()
         this.checkPrefixWarning(this._prefix)
@@ -35,7 +35,7 @@ export class InvoiceNumberGenerator {
         const date = new Date()
         const currentMonth = date.getMonth() + 1
         const currentYear = date.getFullYear() % this._century
-        this._currentFinancialYear = currentMonth > this._financialYearEndingMonth ? currentYear + 1 : currentYear - 1
+        this._currentFinancialYear = currentMonth < this._financialYearEndingMonth ? currentYear - 1 : currentYear
     }
 
 
@@ -51,6 +51,7 @@ export class InvoiceNumberGenerator {
         if (this.warnings.length > IDEAL_INVOICE_NUMBER_PREFIX_LENGTH) {
             console.warn(`Invoice number generated with warning - ${this.warnings.join('\n')}`)
         }
-        return `${this._prefix.toUpperCase()}/${this._currentFinancialYear}-${this._currentFinancialYear + 1}/${this._counter + 1}`
+        const financialYear = `${this._prefix.toUpperCase()}/${this._currentFinancialYear}-${this._currentFinancialYear + 1}/${this._counter + 1}`
+        return financialYear
     }
 }
